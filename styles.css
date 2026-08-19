@@ -134,7 +134,25 @@ ul{ margin:0; padding:0; list-style:none; }
 .header-top__links a:hover{ text-decoration:underline; }
 
 .header-bar{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:12px 0; }
-.brand img{ height:52px; width:auto; }
+.brand{ text-decoration:none; }
+.wordmark{ display:inline-flex; flex-direction:column; line-height:1; gap:.28rem; }
+.wordmark__name{
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  letter-spacing:.02em;
+  color:var(--text);
+  text-transform:uppercase;
+}
+.wordmark__dash{ color:var(--orange); }
+.wordmark__sub{
+  font-size:.66rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding-left:.12em;
+}
+.wordmark--footer{ margin-bottom:1.1rem; }
+.wordmark--footer .wordmark__name{ font-size:1.9rem; }
 
 .nav{ display:flex; align-items:center; gap:2rem; margin-left:auto; }
 .nav__list{ display:flex; align-items:center; gap:1.5rem; }
@@ -398,7 +416,18 @@ ul{ margin:0; padding:0; list-style:none; }
 .feature__media img{ width:100%; aspect-ratio:10/7; object-fit:cover; border-radius:var(--radius-lg); border:1px solid var(--line); box-shadow:var(--shadow); }
 .feature__copy p{ color:var(--muted); }
 .feature__meta{ font-size:.88rem; color:#6e768a; }
-.feature__strip{ width:100%; border-radius:var(--radius-sm); border:1px solid var(--line); background:#fff; margin:0 0 1.4rem; }
+.feature__strip{
+  display:flex; align-items:center; gap:.85rem; flex-wrap:wrap;
+  width:100%; margin:0 0 1.4rem; padding:.85rem 1.1rem;
+  border-radius:var(--radius-sm);
+  border:1px solid rgba(255,92,26,.32);
+  background:linear-gradient(120deg,rgba(255,92,26,.14),rgba(255,138,61,.06));
+}
+.feature__strip-tag{
+  font-family:var(--font-display); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink); background:var(--orange); border-radius:999px; padding:.34rem .7rem; white-space:nowrap;
+}
+.feature__strip-text{ font-size:.95rem; font-weight:600; color:var(--text); }
 
 /* ---------- Reviews ---------- */
 .reviews{ padding-block:clamp(52px,6vw,84px); }
@@ -408,7 +437,18 @@ ul{ margin:0; padding:0; list-style:none; }
   border:1px solid var(--line); border-radius:var(--radius-lg);
   padding:clamp(26px,4vw,44px);
 }
-.reviews__badge{ width:min(260px,40vw); border-radius:var(--radius-sm); background:#fff; padding:10px; }
+.reviews__badge{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.3rem;
+  width:min(260px,40vw); padding:1.4rem 1.1rem;
+  border-radius:var(--radius); border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+}
+.reviews__badge-stars{ display:flex; gap:.18rem; color:#ffc53d; }
+.reviews__badge-stars svg{ width:22px; height:22px; }
+.reviews__badge-score{ font-family:var(--font-display); font-size:2.1rem; line-height:1.05; color:var(--text); }
+.reviews__badge-label{
+  font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); text-align:center;
+}
 .reviews__inner p{ color:var(--muted); margin-bottom:1.3rem; }
 
 /* ---------- Contact / CTA ---------- */
@@ -438,7 +478,7 @@ a.contact-list__value:hover{ color:var(--orange-2); }
 /* ---------- Footer ---------- */
 .footer{ background:var(--ink-2); border-top:1px solid var(--line); padding-top:clamp(46px,6vw,72px); }
 .footer__inner{ display:grid; grid-template-columns:1fr 1.5fr; gap:clamp(30px,5vw,64px); padding-bottom:44px; }
-.footer__brand img{ height:64px; width:auto; margin-bottom:1.1rem; }
+.footer__brand .wordmark{ margin-bottom:1.1rem; }
 .footer__brand p{ color:var(--muted); font-size:.95rem; max-width:42ch; }
 .footer__phone{ font-family:var(--font-display); font-size:1.3rem; color:var(--orange-2); }
 .footer__phone:hover{ color:#fff; }
@@ -511,7 +551,8 @@ a.contact-list__value:hover{ color:var(--orange-2); }
   .header-top__msg{ display:none; }
   .header-top__inner{ justify-content:center; }
   .header-top__links{ gap:1rem; font-size:.72rem; }
-  .brand img{ height:44px; }
+  .wordmark__name{ font-size:1.3rem; }
+  .wordmark__sub{ font-size:.58rem; letter-spacing:.28em; }
   .included{ grid-template-columns:1fr; }
   .venues{ grid-template-columns:1fr; }
   .upgrades{ grid-template-columns:1fr; }
